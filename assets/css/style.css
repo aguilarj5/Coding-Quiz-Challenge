@@ -1,0 +1,13 @@
+* {
+    text-align: center;
+}
+
+#startPage {
+    visibility: visible;
+}   
+
+.questions {
+    visibility: hidden;
+    position: fixed;
+    left:  50%;
+}

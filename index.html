@@ -11,25 +11,55 @@
         <label id="timer"></label>    
     </header>
 
-    <section id="question1">
-    <h2 class="prompt">How was your day?</h2>
-    <button class="answers" value="correct">A. Good</button>  
-    <button class="answers" value="incorrect">B. Best day ever!</button>  
-    <button class="answers" value="incorrect">C. So/So</button>  
-    <button class="answers" value="incorrect">D. All the above.</button>    
+    <section id="startPage">
+        <h1>Coding Quiz Challenge</h1>
+        <p> Try to answer the following code-related questions within the   time limit. Keep in mind that incorrect answers wil penalize your score/time by 10 seconds!
+        </p>
+    <button id="btnStart">Start</button>
+    </section>
+
+    <section class="questions" id="question1">
+        <h2 class="prompt">Commonly Used Data Types Do Not Include?</h2>
+        <button class="answers" value="incorrect">A. strings</button>  
+        <button class="answers" value="incorrect">B. booleans</button>  
+        <button class="answers" value="correct">C. alerts</button>  
+        <button class="answers" value="incorrect">D. numbers</button>    
     </section>
     
+    <section class="questions" id="question2">
+        <h2 class="prompt">The condition in an if/else statement is enclosed with _____?</h2>
+        <button class="answers" value="incorrect">A. quotes</button>  
+        <button class="answers" value="incorrect">B. curly brackets</button>  
+        <button class="answers" value="correct">C. parenthesis</button>  
+        <button class="answers" value="incorrect">D. square brackets</button>    
+    </section>
     
-    <section id="question2">
-        <h2 class="prompt">How was your day?</h2>
-        <button class="answers" value="incorrect">A. Good</button>  
-        <button class="answers" value="correct">B. Best day ever!</button>  
-        <button class="answers" value="incorrect">C. So/So</button>  
-        <button class="answers" value="correct">D. All the above.</button>    
+    <section class="questions" id="question3">
+        <h2 class="prompt">Arrays in JavaScript can be used to store _____.</h2>
+        <button class="answers" value="incorrect">A. numbers and strings</button>  
+        <button class="answers" value="incorrect">B. other arrays</button>  
+        <button class="answers" value="incorrect">C. booleans</button>  
+        <button class="answers" value="correct">D. all the above</button>    
+    </section>
+
+    <section class="questions" id="question4">
+        <h2 class="prompt">String values must be enclosed within _____ when being assigned to variables.</h2>
+        <button class="answers" value="incorrect">A. commas</button>  
+        <button class="answers" value="incorrect">B. curly brackets</button>  
+        <button class="answers" value="correct">C. quotes</button>  
+        <button class="answers" value="incorrect">D. parenthesis</button>    
+    </section>
+    
+    <section class="questions" id="question5">
+        <h2 class="prompt">A very useful tool used during development and debugging for printing content to the debugger is:</h2>
+        <button class="answers" value="incorrect">A. JavaScript</button>  
+        <button class="answers" value="incorrect">B. terminal/bash</button>  
+        <button class="answers" value="incorrect">C. for loops</button>  
+        <button class="answers" value="correct">D. console.log</button>    
     </section>
 
     <footer>
-        <h3 id="response"></h3>
+        <h4 id="response"></h4>
     </footer>
 
     <script src="assets/js/script.js"></script>
