@@ -18,11 +18,12 @@ function setTime() {
     secondsLeft--;
     timeEl.textContent = secondsLeft + " seconds left till quiz is over.";
 
-    if(secondsLeft === 0) {
+    if(secondsLeft === 0 || secondsLeft < 0) {
       // Stops execution of action at set interval
       clearInterval(timerInterval);
       // Calls function
       sendMessage();
+      handleQuizEnd();
     }
 
   }, 1000);
@@ -66,9 +67,9 @@ for(var i = 0; i < anyAnswer; i++){
 
 //start handle events for answer value
 function handleCorrect() {
+  handleQuizEnd();
   userScore = 20 + userScore;
   responseMsg('Correct!');
-  
   //will hide previous question and show next question
   document.getElementById('question' + questionCount).style.visibility = 'hidden';
 
@@ -78,6 +79,7 @@ function handleCorrect() {
 };
 
 function handleIncorrect() {
+  handleQuizEnd();
   //console.log("do incorrect steps");
   userScore = -20 + userScore;
   secondsLeft = -10 + secondsLeft;
@@ -94,5 +96,17 @@ function handleIncorrect() {
 
 
 function responseMsg(feedback){
-    document.getElementById("response").innerHTML = feedback;
+  document.getElementById("response").innerHTML = feedback;
+};
+
+function scoreForm() {
+  document.getElementById("score").style.visibility = "visible";
+};
+
+function handleQuizEnd() {
+  if((questionCount > qlimit) || (secondsLeft === 0)) {
+    clearInterval(timerInterval);
+    sendMessage();
+    scoreForm();
+  } else return;
 };
