@@ -4,12 +4,14 @@ var secondsLeft = 60;
 
 var anyAnswer = document.querySelectorAll(".answers").length;
 var qlimit = document.querySelectorAll('.questions').length;
-//console.log(qlimit);
 var btnArray = [];
 var answersArray = []; 
 var questionCount = 0;
 var startBtn = document.getElementById('btnStart');
 var userScore = 0;
+
+var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+//console.log(highScores);
 
 //sets timer in motion
 function setTime() {
@@ -22,8 +24,9 @@ function setTime() {
       // Stops execution of action at set interval
       clearInterval(timerInterval);
       // Calls function
+      scoreForm();
       sendMessage();
-      handleQuizEnd();
+
     }
 
   }, 1000);
@@ -39,7 +42,6 @@ function sendMessage() {
 startBtn.addEventListener('click', function(){
   questionCount = questionCount + 1;
   //
-  console.log(questionCount);
   setTime();
   document.getElementById('startPage').style.visibility = 'hidden';
   document.getElementById('question' + questionCount).style.visibility = "visible";
@@ -100,7 +102,16 @@ function responseMsg(feedback){
 };
 
 function scoreForm() {
-  document.getElementById("score").style.visibility = "visible";
+  document.getElementById('score').style.visibility = "visible";
+  /*document.getElementById("initials").on('submit', function(){
+    var score = {
+      initials: initials.value,
+      score: userScore
+    };
+
+    highScores.push(score);
+    console.log(highScores);
+  })*/
 };
 
 function handleQuizEnd() {
